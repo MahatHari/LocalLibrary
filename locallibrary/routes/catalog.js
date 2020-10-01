@@ -65,28 +65,28 @@ router.get("/authors", author_controller.author_list);
 
 /*                  Genere Routes                             */
 //Get request for creating a genere
-router.get("/genere/create", genre_controller.genere_create_get);
+router.get("/genre/create", genre_controller.genre_create_get);
 
-//POST for creating Genere
-router.post("/genere/create", genre_controller.genere_create_post);
+//POST for creating genre
+router.post("/genre/create", genre_controller.genre_create_post);
 
-//Get Request to delete Genere
-router.get("/genere/:id/delete", genre_controller.genere_delete_get);
+//Get Request to delete genre
+router.get("/genre/:id/delete", genre_controller.genre_delete_get);
 
-//POST request to delere Genere
-router.post("/genere/:id/delete", genre_controller.genere_delete_post);
+//POST request to delere genre
+router.post("/genre/:id/delete", genre_controller.genre_delete_post);
 
 //Get request to update Genre
-router.get("/gerenre/:id/update", genre_controller.genere_update_get);
+router.get("/genre/:id/update", genre_controller.genre_update_get);
 
-//POST request to update Genere
-router.post("/genere/:id/update", genre_controller.genere_update_post);
+//POST request to update genre
+router.post("/genre/:id/update", genre_controller.genre_update_post);
 
 //GET request to list on genre
-router.get("/genre/:id", genre_controller.genere_list);
+router.get("/genre/:id", genre_controller.genre_detail);
 
-//GET request to list all genere
-router.get("/generes", genre_controller.genere_detail);
+//GET request to list all genre
+router.get("/genres", genre_controller.genre_list);
 
 /*                      BOOKINStance Routes                  */
 

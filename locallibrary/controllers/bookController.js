@@ -1,6 +1,6 @@
 const Book = require("../models/book");
 const Author = require("../models/author");
-const Genere = require("../models/author");
+const Genre = require("../models/genre");
 const BookInstance = require("../models/bookinstance");
 
 const async = require("async");
@@ -20,8 +20,8 @@ exports.index = function (req, res) {
       author_count: function (callback) {
         Author.countDocuments({}, callback);
       },
-      genere_count: function (callback) {
-        Genere.countDocuments({}, callback);
+      genre_count: function (callback) {
+        Genre.countDocuments({}, callback);
       },
     },
     function (err, results) {
@@ -35,7 +35,7 @@ exports.index = function (req, res) {
 };
 
 //Display list of all books
-exports.book_list = function (req, res) {
+exports.book_list = function (req, res, next) {
   Book.find({}, "title author")
     .populate("author")
     .exec(function (err, list_books) {
