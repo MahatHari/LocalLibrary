@@ -29,11 +29,19 @@ AuthorSchema.virtual("url").get(function () {
 
 //Virtual for author's birth
 AuthorSchema.virtual("date_of_birth_formatted").get(function () {
-  return moment(this.date_of_birth).format("MMMM DO, YYYY");
+  return moment(this.date_of_birth).format("MMMM Do, YYYY");
 });
 
 AuthorSchema.virtual("date_of_death_formatted").get(function () {
-  return moment(this.date_of_death).format("MMMM DO, YYYY");
+  return moment(this.date_of_death).format("MMMM Do, YYYY");
+});
+
+AuthorSchema.virtual("lifespan").get(function () {
+  return (
+    moment(this.date_of_birth).format("MMMM Do, YYYY") +
+    " - " +
+    moment(this.date_of_death).format("MMMM Do, YYYY")
+  );
 });
 
 //Exporting model
